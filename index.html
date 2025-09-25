@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lego Star War store</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bad+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Lego store</h1>
+      <!-- cart toggle (CSS-only) -->
+      <input type="checkbox" id="cart-toggle" class="cart-toggle-input" hidden>
+      <label for="cart-toggle" class="cart-toggle">Cart</label>
+    </header>
+
+    <!-- Cart panel -->
+    <aside class="cart-panel" aria-hidden="true" id="cartPanel">
+      <button class="cart-close" id="cartClose">Close ✕</button>
+      <h2>Your Cart <span id="cartCount">0</span></h2>
+      <div class="cart-list" id="cartList">
+        <p class="cart-empty">Your cart is empty.</p>
+      </div>
+      <div style="margin-top:1rem; text-align:right;"><button id="checkoutBtn" class="btn">Checkout</button></div>
+    </aside>
+
+    <div class="container" id="product-gallery" aria-label="Product gallery">
+      <!-- 12 product cards: 4 columns x 3 rows on wide screens -->
+      <!-- Each card has a unique id and data-product-id for DOM selection -->
+      
+      <div class="card product-card" id="product-1" data-product-id="1">
+        <h2 class="card-header">Lego Millennium Falcon</h2>
+        <img class="card-img" src="https://i5.walmartimages.com/asr/625df3e7-f408-4b69-a52a-4392886a5291.ca5a8df751327ab30c7bb0996141f533.jpeg" alt="colorful candy">
+        <div class="card-footer">
+          <span class="card-price">$650.00</span>
+          <button class="btn add-btn" data-id="1">Add</button>
+          <a href="#buy-1" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-2" data-product-id="2">
+        <h2 class="card-header">Lego AT-TE Walker</h2>
+        <img class="card-img" src="https://9to5toys.com/wp-content/uploads/sites/5/2022/07/LEGO-AT-TE.jpg?w=1024" alt="chocolate box">
+        <div class="card-footer">
+          <span class="card-price">$140.00</span>
+          <button class="btn add-btn" data-id="2">Add</button>
+          <a href="#buy-2" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-3" data-product-id="3">
+        <h2 class="card-header">Lego Death Star</h2>
+        <img class="card-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpjZNOAfeQSAijCiOXAT0fKFrbSQ0NGQaHhQ&s" alt="gummies">
+        <div class="card-footer">
+          <span class="card-price">$1000.00</span>
+          <button class="btn add-btn" data-id="3">Add</button>
+          <a href="#buy-3" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-4" data-product-id="4">
+        <h2 class="card-header">Lego Driod MTT</h2>
+        <img class="card-img" src="https://static.wixstatic.com/media/f3ed07_c0eff98c8432430386c5b1e780205105~mv2.webp" alt="mint candies">
+        <div class="card-footer">
+          <span class="card-price">$160.00</span>
+          <button class="btn add-btn" data-id="4">Add</button>
+          <a href="#buy-4" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-5" data-product-id="5">
+        <h2 class="card-header">Lego Darth Maul</h2>
+        <img class="card-img" src="https://storage.googleapis.com/images.pricecharting.com/7c7bc6955c3256891734013af5af5cba7fec325ced041fb173405d31e50ad97e/1600.jpg" alt="fruit chews">
+        <div class="card-footer">
+          <span class="card-price">$830.00</span>
+          <button class="btn add-btn" data-id="5">Add</button>
+          <a href="#buy-5" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-6" data-product-id="6">
+        <h2 class="card-header">Lego Coruscant Guard Gunship</h2>
+        <img class="card-img" src="https://i.ebayimg.com/images/g/yL4AAOSwGqFk-4rV/s-l1200.jpg" alt="caramel treats">
+        <div class="card-footer">
+          <span class="card-price">$140.00</span>
+          <button class="btn add-btn" data-id="6">Add</button>
+          <a href="#buy-6" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-7" data-product-id="7">
+        <h2 class="card-header">Lego Assault on Hoth</h2>
+        <img class="card-img" src="https://www.lego.com/cdn/cs/set/assets/blt532cf3a35371bd53/75098_alt1.jpg" alt="nut bars">
+        <div class="card-footer">
+          <span class="card-price">$550.00</span>
+          <button class="btn add-btn" data-id="7">Add</button>
+          <a href="#buy-7" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-8" data-product-id="8">
+        <h2 class="card-header">Lego Ewok Village</h2>
+        <img class="card-img" src="https://m.media-amazon.com/images/I/91Iq1vR4sJL.jpg" alt="toffees">
+        <div class="card-footer">
+          <span class="card-price">$470.00</span>
+          <button class="btn add-btn" data-id="8">Add</button>
+          <a href="#buy-8" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-9" data-product-id="9">
+        <h2 class="card-header">Lego Republic Dropship with AT-OT</h2>
+        <img class="card-img" src="https://cdn.toypro.com/media/cache/tp_product_detail/uploads/images/product/5/10558.webp" alt="berry jars">
+        <div class="card-footer">
+          <span class="card-price">$1,450.00</span>
+          <button class="btn add-btn" data-id="9">Add</button>
+          <a href="#buy-9" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-10" data-product-id="10">
+        <h2 class="card-header">Lego Yoda</h2>
+        <img class="card-img" src="https://www.lego.com/cdn/cs/set/assets/blt754ac6d1dbbd121e/75255_alt1.jpg" alt="maple snacks">
+        <div class="card-footer">
+          <span class="card-price">$180.00</span>
+          <button class="btn add-btn" data-id="10">Add</button>
+          <a href="#buy-10" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-11" data-product-id="11">
+        <h2 class="card-header">Lego R2-D2</h2>
+        <img class="card-img" src="https://i5.walmartimages.com/asr/aa10916e-b0b0-4894-a47d-ecc9d54167ee.b119f83c53405fe635901888fd322462.jpeg" alt="citrus sweets">
+        <div class="card-footer">
+          <span class="card-price">$230.00</span>
+          <button class="btn add-btn" data-id="11">Add</button>
+          <a href="#buy-11" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+      <div class="card product-card" id="product-12" data-product-id="12">
+        <h2 class="card-header">Lego Chewbacca</h2>
+        <img class="card-img" src="https://m.media-amazon.com/images/I/81RWw9qvolL.jpg" alt="nougat">
+        <div class="card-footer">
+          <span class="card-price">$250.00</span>
+          <button class="btn add-btn" data-id="12">Add</button>
+          <a href="#buy-12" class="btn buy-btn">Buy</a>
+        </div>
+      </div>
+
+    </div>
+
+    <footer style="text-align:center; color:rgba(255,255,255,0.9); margin:2rem 0;">
+  <small>Thanks for shopping with us</small>
+    </footer>
+  <!-- Buy modals (CSS-only) -->
+  <div id="buy-1" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Millennium Falcon</h3><p>Price: $650.00</p><p>This is a CSS-only demo.</p></div></div>
+  <div id="buy-2" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego AT-TE Walker</h3><p>Price: $140.00</p></div></div>
+  <div id="buy-3" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Death Star</h3><p>Price: $1000.00</p></div></div>
+  <div id="buy-4" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Droid MTT</h3><p>Price: $160.00</p></div></div>
+  <div id="buy-5" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Darth Maul</h3><p>Price: $830.00</p></div></div>
+  <div id="buy-6" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Coruscant Guard Gunship</h3><p>Price: $140.00</p></div></div>
+  <div id="buy-7" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Assault on Hoth</h3><p>Price: $550.00</p></div></div>
+  <div id="buy-8" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Ewok Village</h3><p>Price: $470.00</p></div></div>
+  <div id="buy-9" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Republic Dropship with AT-OT</h3><p>Price: $1,450.00</p></div></div>
+  <div id="buy-10" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Yoda</h3><p>Price: $180.00</p></div></div>
+  <div id="buy-11" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego R2-D2</h3><p>Price: $230.00</p></div></div>
+  <div id="buy-12" class="buy-modal"><div class="modal-inner"><a class="close" href="#">✕</a><h3>Buy Lego Chewbacca</h3><p>Price: $250.00</p></div></div>
+    
+    </body>
+</html>
