@@ -2,44 +2,105 @@
 const lego = [
     {
     name: "Lego Death star",
-     price: 1000.00,
-     inStock: true, 
-     brand : "Legos",
+    price: 1000.00,
+    inStock: true, 
+     brand : "Legos Star Wars",
     }, {
     name: "Lego Millennium Falcon",
-     price: 649.99, 
-         inStock: true, 
-         brand: "Legos", 
-         images: "https://i5.walmartimages.com/asr/625df3e7-f408-4b69-a52a-4392886a5291.ca5a8df751327ab30c7bb0996141f533.jpeg"
+    price: 649.99, 
+    inStock: true, 
+    brand: "Legos Star Wars", 
     }, {
     name: "Lego R2D2", 
     price: 230.00,  
     inStock: true, 
-    brand : "Legos",
+    brand : "Legos Star Wars",
     }, {
     names: "Lego star wars",
     price: 250.00, 
     instock: true,
-    brand: "Legos"
+    brand: "Legos Star wars"
     }, { 
     name: "Lego brick",
     price: 0.03, 
     instock: true,
-    brand: "Legos"
+    brand: "Others"
     }, { 
     name: "Lego Star Destoryer", 
     price: 400.00,
     instock: true, 
-    brand: "Legos"
+    brand: "Legos Star Wars"
     }, {
     name: "Lego Super Star Destoryer",
     price: 1000.00,
     instock:true,
-    brand: "legos"
+    brand: "legos Star wars"
     }, {
     name: "Lego Star War Imperial Assault Carrier",
     price: 200.00,
     instock: true,
-    brand: "legos"
-    }
+    brand: "legos Star wars"
+    }, {
+    name: "Baby oil",
+    price: 2.50,
+    instock: true, 
+    brand: "Other goods"
+    }, {
+    name: "Lego City Police Sations",
+    price: 70.00,
+    instocks: true, 
+    brand: "Lego city"
+    }, {
+    name: "Fire Station Headquarters",
+    price: 190.00,
+    instocks: true,
+    brand: "Lego City"
+    }, {
+    name: "Lego City Airport",
+    price: 120.00,
+    instocks: true,
+    brand: "Lego City"
+    }, {
+    name: "Lego City Hospital", 
+    price: 150.00,
+    instocks: true,
+    brand: "Lego City"
+    }, {
+    name: "Lego The Botanical Garden",
+    price: 350.00,
+    instocks: true,
+    brand: "Lego Creator"
+    }, {
+    name: "Lego The goonies",
+    price: 330.00,
+    instocks: true,
+    brand: "Lego Creator"
+    }, {
+    name: "Lego Jango Fett's starship",
+    price: 300.00,
+    instocks: true,
+    brand: "Lego Star wars"
+    }, {
+    name: "Lego AT-AT",
+    price: 649.99,
+    instocks: true,
+    brand: "Lego Star wars",
+    }, {
+    name: "Lego Yellow Construction Excavator",
+    price: 54.99,
+    instocks: true,
+    brand: "Lego city",
+    }, {
+    name: "Lego Bullet train",
+    price: 119.99,
+    instocks: true,
+    brand: "Lego city",
+    }, {
+    name: "Arctic Explorer Science Lab Truck",
+    price: 119.99,
+    instocks: true,
+    brand: "Lego city",
+    }, 
+
+    
 ]
