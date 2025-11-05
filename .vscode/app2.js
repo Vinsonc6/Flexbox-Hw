@@ -41,10 +41,10 @@ const lego = [
     instock: true,
     brand: "legos Star wars"
     }, {
-    name: "Baby oil",
-    price: 2.50,
+    name: "Lego Republic Dropship with AT-OT",
+    price: 1450.00,
     instock: true, 
-    brand: "Other goods"
+    brand: "lego Star war"
     }, {
     name: "Lego City Police Sations",
     price: 70.00,

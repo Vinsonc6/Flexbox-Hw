@@ -1,207 +1,85 @@
-/* Reset and base */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-html, body {
-  font-size: 20px;
-  height: 100%;
+/* --- Global Styles for Fixed 4-Column Grid --- */
+
+/* The main change is setting grid-template-columns to repeat(4, ...) */
+.container#product-gallery {
+    /* Set up a fixed 4-column grid layout for the postcards */
+    display: grid;
+    /* This creates exactly 4 columns, each taking an equal fraction (1fr) of the available space. */
+    grid-template-columns: repeat(4, 1fr); 
+    
+    gap: 1rem; /* Space between the postcards */
+    padding: 2rem; /* Padding around the whole gallery */
+    /* You may want to set a max-width if you don't want the cards to stretch too wide on huge screens */
+    /* max-width: 80rem; 
+    margin: 0 auto; */
+    justify-content: center; /* Center the grid in the page if you set a max-width */
 }
 
-body {
-  background-color: rgba(58, 153, 172, 0.406); /* red background requested */
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  color: #fff;
-  line-height: 1.4;
+/* --- Postcard Sizing (Kept from previous response) --- */
+
+.card.product-card {
+    /* **Set the Postcard Dimensions (4 inches wide x 5 inches tall)** */
+    /* The 1fr above ensures the card width scales to the grid column, 
+       but setting the width/height still controls the aspect ratio of the content area. */
+    width: 100%; /* Important: Must be 100% of the grid column */
+    height: 5in; /* Keep the 5in height */
+    
+    /* Internal Layout & Styling */
+    background-color: #9b09ef;
+    border: 1px solid #7e0404;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0.25rem;
+    box-sizing: border-box; 
 }
 
-h1, .container, .lesson, footer {
-  position: relative;
-  z-index: 1;
-}
-
-.card-price {
-  color: #ffd76b;
-  text-shadow: 0 0 8px rgba(255,215,107,0.12);
-}
-
-h1 {
-  text-align: center;
-  color: #ffe81f; 
-  font-size: 48px;
-  font-family: 'Orbitron', 'Bad Script', cursive;
-  padding: 1rem 0;
-  text-shadow: 0 0 18px rgba(255,232,31,0.25), 0 0 6px rgba(255,232,31,0.6);
-  letter-spacing: 2px;
-}
-
-.container {
-  width: 90vw;
-  margin: 50px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.card {
-  width: calc(25% - 1rem);
-  height: 360px;
-  color: #fff;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
-  margin: 1rem 0.5rem;
-  border-radius: 6px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(180deg, rgba(10,10,10,0.85), rgba(20,20,20,0.95));
-  border: 1px solid rgba(255,232,31,0.08);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.65), 0 3px 10px rgba(0,0,0,0.4) inset;
-}
-
-.card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 28px 64px rgba(0,0,0,0.8), 0 6px 22px rgba(0,0,0,0.55) inset;
-}
+/* --- Content Styling (Rest remains the same) --- */
 
 .card-header {
-  margin-top: 0.5rem;
-  font-size: 1.1rem;
-  color: #ffe81f;
-  font-weight: 700;
-  text-transform: uppercase;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 0.1rem 0.25rem;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .card-img {
-  width: 90%;
-  height: 60%;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 4px solid rgba(255,232,31,0.06);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-grow: 1;
 }
 
 .card-footer {
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  border-top: 1px solid rgba(255,255,255,0.02);
-}
-
-.btn {
-  background: rgba(255,232,31,0.06);
-  color: #ffe81f;
-  border: 1px solid rgba(255,232,31,0.14);
-  padding: 0.45rem 0.8rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.btn:focus,
-.btn:hover {
-  background: rgba(255,232,31,0.12);
-  box-shadow: 0 6px 18px rgba(255,232,31,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0.25rem;
+    background-color: #eee;
+    border-top: 1px dashed #ccc;
+    flex-shrink: 0;
+    font-size: 0.7em;
 }
 
 .card-price {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: #00b1cc4b;
 }
 
-.lesson {
-  width: 90vw;
-  margin: 2rem auto 4rem;
-  background: rgba(255,255,255,0.02);
-  padding: 1.25rem;
-  border-radius: 8px;
-  color: #ddd;
-  border: 1px solid rgba(255,255,255,0.02);
+.btn {
+    padding: 0.2em 0.5em;
+    font-size: 0.7em;
+    cursor: pointer;
 }
 
-pre, code {
-  background: rgba(0,0,0,0.25);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  overflow: auto;
-}
-
-@media screen and (max-width: 1000px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
+/* --- Media Query for Small Screens --- */
+/* On smaller screens (like phones), 4 columns might be too small. 
+   Consider making it a single column to improve readability. */
+@media (max-width: 30rem) {
+    .container#product-gallery {
+        grid-template-columns: 1fr; /* Go to 1 column */
+    } 
   }
-  .card {
-    width: 100%;
-    max-width: 600px;
-  }
-}
-
-/* Ensure a tighter mobile card look */
-@media screen and (min-width: 1001px) and (max-width: 1400px) {
-  /* keep 4-column layout on medium-wide screens */
-  .card { width: calc(25% - 1rem); }
-}
-
-/* Cart panel CSS-only drawer */
-.cart-panel {
-  position: fixed;
-  right: 1rem;
-  top: 4rem;
-  width: 320px;
-  max-height: 70vh;
-  overflow: auto;
-  background: rgba(10,10,10,0.95);
-  border: 1px solid rgba(255,232,31,0.06);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.8);
-  transform: translateY(-20px) scale(0.98);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 220ms ease, transform 220ms ease;
-  z-index: 2;
-}
-
-/* Show cart when the panel has class .open */
-.cart-panel.open {
-  transform: translateY(0) scale(1);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Cart item styling */
-.cart-list .cart-item { display: block; padding: 0.25rem 0; }
-
-/* Add button specific look */
-.add-btn { background: rgba(34,197,94,0.12); color: #e1f3a7; border-color: rgba(34,197,94,0.2); }
-.add-btn:hover { background: rgba(34,197,94,0.18); box-shadow: 0 6px 18px rgba(34,197,94,0.06); }
-
-/* cart count badge */
-#cartCount { background: rgba(255,255,255,0.06); color: #ffe81f; padding: 0.15rem 0.45rem; border-radius: 999px; font-weight:700; margin-left:0.5rem; }
-
-.cart-item { display:flex; justify-content:space-between; align-items:center; gap:0.5rem; border-bottom:1px dashed rgba(255,255,255,0.03); padding:0.5rem 0; }
-.cart-item .cart-item-title { flex:1; font-size:0.95rem; }
-.cart-item .cart-item-qty { color: rgba(255,255,255,0.6); }
-.cart-remove { background: transparent; border: none; color: rgba(255,255,255,0.6); cursor:pointer; font-size:1rem; }
-
-/* Small hint style */
-.cart-hint { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 0.75rem; }
-
-/* Style for cart toggle label */
-.cart-toggle { background: rgba(255,232,31,0.06); color: #ffe81f; padding: 0.25rem 0.6rem; border-radius: 6px; border:1px solid rgba(255,232,31,0.08); cursor:pointer; }
-.cart-close { display:block; text-align:right; color: rgba(255,255,255,0.5); cursor:pointer; margin-bottom: 0.25rem; }
-
-.buy-modal { position: fixed; inset: 0; display: flex; align-items:center; justify-content:center; background: rgba(0,0,0,0.6); opacity:0; pointer-events:none; transition: opacity 180ms ease; z-index: 4; }
-.buy-modal:target { opacity: 1; pointer-events: auto; }
-.buy-modal .modal-inner { background: #0b0b0b; padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255,232,31,0.06); width: 90%; max-width: 420px; }
-.buy-modal .close { float:right; color:#fff; text-decoration:none; padding:0.2rem 0.4rem; }
-
-
