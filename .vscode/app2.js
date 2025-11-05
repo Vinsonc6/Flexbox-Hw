@@ -71,7 +71,7 @@ const lego = [
     instocks: true,
     brand: "Lego Creator"
     }, {
-    name: "Lego The goonies",
+    name: "Lego The Goonies Ship",
     price: 330.00,
     instocks: true,
     brand: "Lego Creator"
