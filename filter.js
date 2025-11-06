@@ -12,13 +12,13 @@ const products = [
   { id: 11, name: "City Police Station", price: 70.00, inStock: true, brand: "City" ,img:"https://m.media-amazon.com/images/I/81r959axlmL._AC_UF894,1000_QL80_.jpg" },
   { id: 12, name: "Fire Station Headquarters", price: 190.00, inStock: true, brand: "City" ,img:"https://cdn.merlinsbricks.com/images/LEGO-77944/LEGO-77944-0.webp?v=2" },
   { id: 13, name: "City Airport", price: 120.00, inStock: true, brand: "City" ,img: "https://m.media-amazon.com/images/I/81OQG7wwN4L._AC_UF894,1000_QL80_.jpg" },
-  { id: 14, name: "City Hospital", price: 150.00, inStock: true, brand: "City" ,
-  { id: 15, name: "Yellow Construction Excavator", price: 54.99, inStock: true, brand: "City" },
-  { id: 16, name: "Space Science Lab", price: 34.99, inStock: true, brand: "City" },
-  { id: 17, name: "Lego Bullet Train", price: 119.99, inStock: true, brand: "City" },
-  { id: 18, name: "Botanical Garden", price: 350.00, inStock: true, brand: "Creator" },
-  { id: 19, name: "The Goonies Ship", price: 330.00, inStock: true, brand: "Creator" },
-  { id: 20, name: "Arctic Explorer Science Lab Truck", price: 119.99, inStock: true, brand: "City" }
+  { id: 14, name: "City Hospital", price: 150.00, inStock: true, brand: "City" ,img: "https://www.lego.com/cdn/cs/set/assets/blt9fca6bebb661ec35/60330.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2" },
+  { id: 15, name: "Yellow Construction Excavator", price: 54.99, inStock: true, brand: "City" ,img: "https://www.lego.com/cdn/cs/set/assets/blta6cb327eb3f74f0d/60420_boxprod_v39.png?fit=crop&quality=80&width=800&height=800&dpr=1" },
+  { id: 16, name: "Space Science Lab", price: 34.99, inStock: true, brand: "City" , img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ06pFGz76XKVV-05EhqAqVrvNC9bBllaALjw&s" },
+  { id: 17, name: "Lego Bullet Train", price: 119.99, inStock: true, brand: "City" , img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfcqssD3WQw9hOp2wwlMZbrZnntAbDTZrmtA&s" },
+  { id: 18, name: "Botanical Garden", price: 350.00, inStock: true, brand: "Creator" , img: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQbPXcww1djtK_QvYgcaV-c_e7ZcVZ-1ZIKhDLQlHNVwYDtFACMdkIjqC3bE6u40zSJmoVcY1kviBPWNAA4Y2FQflFfqYal_FlrwankzWHTuTh6ZA8joJJlXA" },
+  { id: 19, name: "The Goonies Ship", price: 330.00, inStock: true, brand: "Creator" , img: "https://www.lego.com/cdn/cs/set/assets/blt58ef7328bce3e306/21363_Prod_en-gb.png?fit=bounds&format=jpg&quality=80&width=1500&height=1500&dpr=1" },
+  { id: 20, name: "Arctic Explorer Science Lab Truck", price: 119.99, inStock: true, brand: "City", img: "https://www.lego.com/cdn/cs/set/assets/bltcf99ef5c7ef1e796/60471_Prod_en-gb.png?fit=bounds&format=jpg&quality=80&width=1500&height=1500&dpr=1" }
 ];
 
 list.filter((item) => item.brand === brand)
@@ -26,10 +26,10 @@ function filterByBrand(brand) {
     return products.filter(product => product.brand.toLowerCase() === brand.toLowerCase());
     }
 
-function addCards(products) {
+function addCards(list) {
     const container = document.getElementById('product-gallery');
     container.innerHTML = '';
-    products.forEach((product, index) => {
+    list.forEach((product, index) => {
         const card = document.createElement('div');
         card.className = 'card product-card';
         card.innerHTML = `
@@ -41,6 +41,8 @@ function addCards(products) {
         </div>`;
         container.appendChild(card);
     });
+    
 }
 
 
+addCards(products);
