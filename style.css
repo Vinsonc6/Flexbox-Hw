@@ -1,0 +1,64 @@
+
+
+html, body { height: 100%; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background: #3a99ac66; color: #fff; }
+
+/* Container: force exactly 4 columns and 5 rows (20 visible cards) */
+.container {
+  width: min(1200px, 92vw);
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  grid-auto-rows: 320px; /* fixed row height for consistent grid (adjust if needed) */
+  gap: 1rem;
+  align-items: start;
+  padding: 0 0.5rem;
+}
+
+/* Card visuals */
+.card {
+  background: linear-gradient(180deg, rgba(10,10,10,0.92), rgba(20,20,20,0.96));
+  border: 1px solid rgba(255,232,31,0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+}
+
+.card-img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Header / footer inside card */
+.card-header { font-size: 1.05rem; color: #300361; margin-bottom: 0.35rem; }
+.card-footer { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.card-price { color: #9e027e; font-weight: 700; }
+
+/* Buttons */
+.btn { background: rgba(255,232,31,0.06); color: #ffe81f; padding: 0.4rem 0.6rem; border-radius: 6px; text-decoration: none; font-weight: 700; }
+
+/* Show only the first 20 cards (4 columns × 5 rows) */
+.container .card:nth-child(n + 21) {
+  display: none !important;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1199px) {
+  .container { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 320px; } /* 3 columns */
+}
+@media (max-width: 899px) {
+  .container { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; } /* 2 columns */
+  .card { height: auto; }
+}
+@media (max-width: 599px) {
+  .container { grid-template-columns: 1fr; gap: 0.6rem; grid-auto-rows: auto; }
+  .card { height: auto; }
+}
+
+.add-btn { display: none !important; }
+/*

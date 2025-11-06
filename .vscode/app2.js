@@ -33,18 +33,18 @@ const lego = [
     }, {
     name: "Lego Super Star Destoryer",
     price: 1000.00,
-    instock:true,
-    brand: "legos Star wars"
+    instock: true,
+    brand: "Legos Star Wars"
     }, {
     name: "Lego Star War Imperial Assault Carrier",
     price: 200.00,
     instock: true,
-    brand: "legos Star wars"
+    brand: "Legos Star Wars"
     }, {
     name: "Lego Republic Dropship with AT-OT",
     price: 1450.00,
     instock: true, 
-    brand: "lego Star war"
+    brand: "Lego Star war"
     }, {
     name: "Lego City Police Sations",
     price: 70.00,
@@ -91,6 +91,11 @@ const lego = [
     instocks: true,
     brand: "Lego city",
     }, {
+    name: "Space Science Lab",
+    price: 34.99,
+    instocks: true,
+    brand: "Lego city",
+    }, {
     name: "Lego Bullet train",
     price: 119.99,
     instocks: true,
@@ -99,7 +104,7 @@ const lego = [
     name: "Arctic Explorer Science Lab Truck",
     price: 119.99,
     instocks: true,
-    brand: "Lego city",
+    brand: "Lego City",
     }, 
 
     
