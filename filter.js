@@ -21,28 +21,29 @@ const products = [
   { id: 20, name: "Arctic Explorer Science Lab Truck", price: 119.99, inStock: true, brand: "City", img: "https://www.lego.com/cdn/cs/set/assets/bltcf99ef5c7ef1e796/60471_Prod_en-gb.png?fit=bounds&format=jpg&quality=80&width=1500&height=1500&dpr=1" }
 ];
 
-list.filter((item) => item.brand === brand)
 function filterByBrand(brand) {
     return products.filter(product => product.brand.toLowerCase() === brand.toLowerCase());
     }
-
 function addCards(list) {
     const container = document.getElementById('product-gallery');
     container.innerHTML = '';
     list.forEach((product, index) => {
-        const card = document.createElement('div');
-        card.className = 'card product-card';
-        card.innerHTML = `
-        <h2 class="card-header">${product.name}</h2>
-        <img class="card-img" src="${product.img}"/>
-        <div class="card-footer">
-          <span class="card-price">$${product.price}</span>
-          <a href="#buy-${index}" class="btn buy-btn">Buy</a>
+        const container = document.querySelector(".container")
+
+        let cardHtml = `
+        <div class="card product-card">
+          <h2 class="card-header">${product.name}</h2>
+          <img class="card-img" src="${product.img}"/>
+          <div class="card-footer">
+            <span class="card-price">$${product.price}</span>
+            <a href="#buy-${index}" class="btn buy-btn">Buy</a>
+          </div>
         </div>`;
-        container.appendChild(card);
-    });
-    
-}
+
+        container.insertAdjacentHTML(
+          "afterbegin", cardHtml)
+    })};
 
 
-addCards(products);
+addCards(products)
+
