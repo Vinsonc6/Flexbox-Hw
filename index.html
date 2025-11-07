@@ -14,9 +14,18 @@
       <h1>Interesting store</h1>
       <input type="checkbox" id="cart-toggle" class="cart-toggle-input" hidden>
       <label for="cart-toggle" class="cart-toggle">Cart</label>
+      <div class="cart"></div>
+      <span id="card-total">Total: $0</span>
     </header>
 
-    <!-- SINGLE container with all cards as direct children -->
+    <nav class="filter-bar" aria-label="Product filter">
+      <button id="all-button">All</button>
+      <button id="city-button">City</button>
+      <button id="creator-button">Creator</button>
+      <button id="starwars-button">Star Wars</button>
+      <button id="others-button">Others</button>
+    </nav>
+
     <div class="container" id="product-gallery" aria-label="Product gallery">
       
     </div>

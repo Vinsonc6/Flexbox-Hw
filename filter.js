@@ -21,9 +21,13 @@ const products = [
   { id: 20, name: "Arctic Explorer Science Lab Truck", price: 119.99, inStock: true, brand: "City", img: "https://www.lego.com/cdn/cs/set/assets/bltcf99ef5c7ef1e796/60471_Prod_en-gb.png?fit=bounds&format=jpg&quality=80&width=1500&height=1500&dpr=1" }
 ];
 
+let cartList = [];
+
 function filterByBrand(brand) {
-    return products.filter(product => product.brand.toLowerCase() === brand.toLowerCase());
-    }
+    const newList = products.filter(product => product.brand.toLowerCase() === brand.toLowerCase());
+    addCards(newList);
+}
+
 function addCards(list) {
     const container = document.getElementById('product-gallery');
     container.innerHTML = '';
@@ -36,14 +40,40 @@ function addCards(list) {
           <img class="card-img" src="${product.img}"/>
           <div class="card-footer">
             <span class="card-price">$${product.price}</span>
-            <a href="#buy-${index}" class="btn buy-btn">Buy</a>
+            <a id="buy-${index}" class="btn buy-btn">Buy</a>
           </div>
         </div>`;
 
         container.insertAdjacentHTML(
           "afterbegin", cardHtml)
+
+      
+        document.getElementById(`buy-${index}`).addEventListener('click', () => {
+          cartList.push(product);
+
+          let total = 0;
+          cartList.forEach(item => {
+            total += item.price;
+          });
+
+        document.getElementById("card-total").innerText = `Total: $${total.toFixed(2)}`;
+          const cart = document.querySelector(".cart");
+          let itemHtml = `
+          <div class="cart-item">
+            <span class="cart-item-name">${product.name}</span>
+            <span class="cart-item-price">$${product.price}</span>
+          </div>`;
+          cart.insertAdjacentHTML("beforeend", itemHtml);
+        });
     })};
 
-
 addCards(products)
+
+document.getElementById('all-button').addEventListener('click', () => addCards(products));
+document.getElementById('city-button').addEventListener('click', () => filterByBrand('City'));
+document.getElementById('creator-button').addEventListener('click', () => filterByBrand('Creator'));
+document.getElementById('starwars-button').addEventListener('click', () => filterByBrand('Star Wars'));
+document.getElementById('others-button').addEventListener('click', () => filterByBrand('Others'));
+
+
 
